@@ -1,0 +1,40 @@
+﻿<head>
+    <link type="text/css" rel="stylesheet" href="~/site.css" />
+</head>
+
+<body>
+
+    @model IEnumerable<Final_Project_ASP_MVC.Models.Animal>
+    @{
+        ViewData["Title"] = "Animal Page";
+    }
+
+    <div class="text-center">
+        <h1 class="display-4">Animal Collection</h1>
+
+
+    </div>
+
+    <div class="card-collection">
+
+
+    @foreach (var animal in Model)
+    {
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@animal.PictureSrc" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@animal.Name</h5>
+                <p class="card-text-age">Age: @animal.Age</p>
+                <p class="card-text">@animal.Description</p>
+                <a class="btn btn-primary" asp-route-animalId="@animal.AnimalId" asp-controller="Animal" asp-action="individual">Show Details</a>
+            </div>
+        </div>
+    }
+
+    </div>
+   
+
+
+</body>
+

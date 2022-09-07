@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="MyDbAnimal.db" />
+    <None Remove="MyDbAnimal.db-shm" />
+    <None Remove="MyDbAnimal.db-wal" />
+    <None Remove="Repositories\" />
+    <None Remove="Views\Animal\" />
+    <None Remove="Views\Catalogue\" />
+    <None Remove="Views\Admin\" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Views\Animal\" />
+    <Folder Include="Views\Catalogue\" />
+    <Folder Include="Views\Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyDbAnimal.db" />
+  </ItemGroup>
+</Project>

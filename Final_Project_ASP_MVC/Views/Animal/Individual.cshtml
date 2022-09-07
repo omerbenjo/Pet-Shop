@@ -1,0 +1,23 @@
+﻿@model Final_Project_ASP_MVC.Models.Animal
+
+<div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@Model.PictureSrc" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                @foreach (var comment in Model.Comments!)
+                {
+                    <p>@comment.Content!</p>
+                }
+            </div>
+        </div>
+
+</div>
+
+
+@using (Html.BeginForm("AddComment", "Animal", new { id = Model.AnimalId }, FormMethod.Post))
+{
+    @Html.TextBox("Animal_Comment", null, new { id = Model.AnimalId, @placeholder = "Leave Comment Here" })
+    <input type="submit" value="Add Comment" />
+}

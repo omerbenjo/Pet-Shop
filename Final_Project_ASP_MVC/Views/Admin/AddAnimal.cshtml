@@ -1,0 +1,62 @@
+﻿@model Final_Project_ASP_MVC.Models.Animal
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<div style="width: 30%;">
+
+    <form asp-action="AddEx" class="py-5">
+
+        <div class="form-group" style="margin-top: 20px;">
+            <input asp-for="@Model.Name" class="form-control" placeholder="Add Name" required />
+            @Html.ValidationMessageFor(model => model.Name)
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group " style="margin-top: 20px;">
+            <input asp-for="@Model.Age" class="form-control" placeholder="Add Age" required />
+            @Html.ValidationMessageFor(model => model.Age)
+
+            <span class="text-danger"></span>
+        </div>
+
+        <div class="form-group " style="margin-top: 20px;">
+            <input asp-for="@Model.Description" class="form-control" placeholder="Add Description" required />
+            @Html.ValidationMessageFor(model => model.Description)
+
+            <span class="text-danger"></span>
+        </div>
+
+        <div class="form-group " style="margin-top: 20px;">
+            <input asp-for="@Model.PictureSrc" class="form-control" placeholder="Add Image" required />
+            @Html.ValidationMessageFor(model => model.PictureSrc)
+
+            <span class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="Age" />
+            <span asp-validation-for="Age"></span>
+        </div>
+
+        <select name="CategoryId" style="text-align: center;">
+            <option value="2">Birds</option>
+
+            <option value="1">Mammals</option>
+
+            <option value="3">Fish</option>
+
+            <option value="4">Amphibians</option>
+
+
+            <option value="5">reptiles</option>
+        </select>
+
+
+        <div class="form-group">
+            <button style="margin-left:25%; margin-top:50px;" type="submit" class="btn btn-lg btn-success btn-block">Add Animal</button>
+        </div>
+
+
+    </form>
+
+
+</div>

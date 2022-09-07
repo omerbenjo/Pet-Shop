@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Final_Project_ASP_MVC.Models.Animal>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2>Top Two Comments</h2>
+
+    <div class="card-collection">
+
+
+        @foreach (var animal in Model)
+        {
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@animal.PictureSrc" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@animal.Name</h5>
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+</div>
